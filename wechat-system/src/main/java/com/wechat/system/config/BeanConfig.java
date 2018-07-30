@@ -1,4 +1,4 @@
-package com.example.system.config;
+package com.wechat.system.config;
 
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.support.config.FastJsonConfig;

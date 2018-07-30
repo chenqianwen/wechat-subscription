@@ -1,4 +1,4 @@
-package com.example.system.enums;
+package com.wechat.system.enums;
 
 import lombok.Getter;
 import lombok.Setter;

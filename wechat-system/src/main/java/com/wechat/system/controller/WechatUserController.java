@@ -1,4 +1,4 @@
-package com.example.system.controller;
+package com.wechat.system.controller;
 
 import com.wechat.service.entity.WechatUser;
 import com.wechat.service.entity.WechatUserIntegral;

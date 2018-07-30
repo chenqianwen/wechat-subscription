@@ -1,4 +1,4 @@
-package com.example.system.model;
+package com.wechat.system.model;
 
 import com.wechat.system.enums.ResponseEnum;
 import lombok.Data;

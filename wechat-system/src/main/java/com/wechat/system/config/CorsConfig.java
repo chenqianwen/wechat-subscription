@@ -1,4 +1,4 @@
-package com.example.system.config;
+package com.wechat.system.config;
 
 import com.wechat.system.properties.SystemProperties;
 import org.springframework.beans.factory.annotation.Autowired;

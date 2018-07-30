@@ -1,4 +1,4 @@
-package com.example.system.properties;
+package com.wechat.system.properties;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
