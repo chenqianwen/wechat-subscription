@@ -32,9 +32,9 @@ public class WechatApiUrl {
      */
     public final static String MENU_CREATE_URL = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=ACCESS_TOKEN";
     /**
-     *  发送文本消息
+     *  发送客服消息
      */
-    public final static String MESSAGE_TEXT_URL = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN";
+    public final static String CUSTOM_MESSAGE_URL = "https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN";
     /**
      *  获得用户信息
      */

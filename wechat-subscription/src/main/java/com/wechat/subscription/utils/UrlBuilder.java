@@ -29,12 +29,12 @@ public class UrlBuilder {
         return WechatApiUrl.MENU_CREATE_URL.replace(WechatApiUrl.ACCESS_TOKEN, accessToken);
     }
     /**
-     * 发送文本消息的url
+     * 发送客服消息的url
      * @param accessToken
      * @return
      */
-    public static String buildMessageTextUrl(String accessToken) {
-        return WechatApiUrl.MESSAGE_TEXT_URL.replace(WechatApiUrl.ACCESS_TOKEN, accessToken);
+    public static String buildCustomMessageUrl(String accessToken) {
+        return WechatApiUrl.CUSTOM_MESSAGE_URL.replace(WechatApiUrl.ACCESS_TOKEN, accessToken);
     }
     /**
      * 获取用户信息的url

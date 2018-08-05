@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -43,6 +44,18 @@ public class MyEventServiceImpl implements WechatEventService {
         String eventKey = map.get("EventKey");
         if (eventKey.equals("btn_points")) {
             String result = messageService.sendTextMessage(openId, "杨国梁爱着贾春恒");
+            ResponseModel responseModel = ModelUtil.buildResponseModel(result);
+            return responseModel;
+        } else if(eventKey.equals("btn_egg")){
+            Map<String,String> params = new HashMap<>();
+            params.put("title","砸金蛋活动开始了");
+            params.put("description","请点击砸金蛋活动页面，祝您好运哦！");
+            params.put("picurl","http://106.14.13.93:8888/group1/M00/00/00/rBMUlltmeN-AbvudAAO_SUhoG9c71.jpeg");
+            String url1 = "http://132.232.32.251:8080/#/egg";
+            String url = "http%3a%2f%2fws.58808706.com%2f%23%2fegg";
+            String url2 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0eb40039d6835802&redirect_uri="+url+"&response_type=code&scope=snsapi_base#wechat_redirect";
+            params.put("url",url2);
+            String result = messageService.sendImageTextMessage(openId, params);
             ResponseModel responseModel = ModelUtil.buildResponseModel(result);
             return responseModel;
         }
