@@ -25,4 +25,12 @@ public interface MessageService {
      * @return
      */
     String sendImageTextMessage(String openId, Map<String,String> params);
+
+    /**
+     * 发送模板信息给用户
+     * @param openId
+     * @param params 参数集合
+     * @return
+     */
+    String sendTemplateMessage(String openId, Map<String,Object> params);
 }
