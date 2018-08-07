@@ -88,4 +88,21 @@ public class MessageServiceImpl implements MessageService {
         log.info("发送消息的结果:" + body);
         return body;
     }
+
+    @Override
+    public String sendTemplateMessage(String openId, Map<String, Object> params) {
+        Map<String,Object> map = new HashMap<>();
+        String url = UrlBuilder.buildTemplateMessageUrl(accessTokenService.getAccessToken());
+        // 模板ID
+        String templateId = params.get("template_id").toString();
+        Map<String,Map<String,String>> data = (Map<String, Map<String, String>>) params.get("data");
+        map.put("touser",openId);
+        map.put("template_id",templateId);
+        map.put("data",data);
+        log.info("发送的模板消息为："+JSONObject.toJSONString(map));
+        ResponseEntity<String> entity = restTemplate.postForEntity(url,map,String.class);
+        String body = entity.getBody();
+        log.info("发送消息的结果:" + body);
+        return body;
+    }
 }

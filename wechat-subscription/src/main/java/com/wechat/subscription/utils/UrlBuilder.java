@@ -37,6 +37,14 @@ public class UrlBuilder {
         return WechatApiUrl.CUSTOM_MESSAGE_URL.replace(WechatApiUrl.ACCESS_TOKEN, accessToken);
     }
     /**
+     * 发送模板消息的url
+     * @param accessToken
+     * @return
+     */
+    public static String buildTemplateMessageUrl(String accessToken) {
+        return WechatApiUrl.TEMPLATE_MESSAGE_URL.replace(WechatApiUrl.ACCESS_TOKEN, accessToken);
+    }
+    /**
      * 获取用户信息的url
      * @param accessToken
      * @return

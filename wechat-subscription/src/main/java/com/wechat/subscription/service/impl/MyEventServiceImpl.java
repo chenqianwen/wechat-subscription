@@ -42,7 +42,7 @@ public class MyEventServiceImpl implements WechatEventService {
     public ResponseModel click(Map<String, String> map) {
         String openId = map.get("FromUserName");
         String eventKey = map.get("EventKey");
-        if (eventKey.equals("btn_points")) {
+        if (eventKey.equals("btn_points"+"sss")) {
             String result = messageService.sendTextMessage(openId, "杨国梁爱着贾春恒");
             ResponseModel responseModel = ModelUtil.buildResponseModel(result);
             return responseModel;
@@ -56,6 +56,30 @@ public class MyEventServiceImpl implements WechatEventService {
             String url2 = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0eb40039d6835802&redirect_uri="+url+"&response_type=code&scope=snsapi_base#wechat_redirect";
             params.put("url",url2);
             String result = messageService.sendImageTextMessage(openId, params);
+            ResponseModel responseModel = ModelUtil.buildResponseModel(result);
+            return responseModel;
+        } else  if (eventKey.equals("btn_points")) {
+            openId = "oe3zj1Eh2UMgl6DUmDTrpbsfzriI";
+            Map<String,Object> params = new HashMap<>();
+            params.put("template_id","Lz5R78GH2Ep7dOjtyQjuRnhdzbhsUi7Qd2DQZxVs_V0");
+            Map<String,Map<String,String>> dataMap = new HashMap<>();
+            Map<String,String> value1 = new HashMap<>();
+            value1.put("value","您的患者已到店");
+            dataMap.put("first",value1);
+            Map<String,String> value2 = new HashMap<>();
+            value2.put("value","南京展超丽格");
+            dataMap.put("keyword1",value2);
+            Map<String,String> value3 = new HashMap<>();
+            value3.put("value","2018-08-08 12：00");
+            dataMap.put("keyword2",value3);
+            Map<String,String> value4 = new HashMap<>();
+            value4.put("value","预约项目---");
+            dataMap.put("keyword3",value4);
+            Map<String,String> value5 = new HashMap<>();
+            value5.put("value","预约备注的内容显示在这里。。。");
+            dataMap.put("remark",value5);
+            params.put("data",dataMap);
+            String result = messageService.sendTemplateMessage(openId, params);
             ResponseModel responseModel = ModelUtil.buildResponseModel(result);
             return responseModel;
         }
