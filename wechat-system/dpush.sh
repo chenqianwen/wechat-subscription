@@ -16,6 +16,7 @@ push_tag()
     set -e
     # push server
     cd $WORKSPACE
+    cd wechat-system
     docker build -t $APP_NAME:$BUILD_TAG .
     docker tag $APP_NAME:$BUILD_TAG $REGISTRY_URL/$NAME_SPACE/$APP_NAME:$BUILD_TAG
     docker push $REGISTRY_URL/$NAME_SPACE/$APP_NAME:$BUILD_TAG
